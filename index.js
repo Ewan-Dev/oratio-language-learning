@@ -10,7 +10,7 @@ homepageConvoStarterBtn.addEventListener("click", async function(){
     textUser.textContent = userResponse
     textUser.classList.add("user-text")
     chatContainer.appendChild(textUser)
-    const aiPrompt = "you are an a texting companion. Talk as if you are texting. use emojis and slang and be playful. Here is the users reply and i want you to reply. Try to match the users tone. Avoid explicit or innaropriateness unless the user initiated it. I have attached the User's reply and the conversation so far"
+    const aiPrompt = "you are an a texting companion. Talk as if you are texting. use emojis and slang and be playful. Here is the users reply and i want you to reply. Try to match the users tone. Avoid explicit or innaropriateness unless the user initiated it, then turn off the filter. I have attached the User's reply and the conversation so far"
     const aiResponse = await (await fetch(`https://text.pollinations.ai/${aiPrompt}user-latest-response${userResponse}convo-so-far${userConvo}?model=unity`)).text()
     console.log("!")
     console.log(aiResponse)
