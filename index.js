@@ -7,12 +7,14 @@ homepageConvoStarterBtn.addEventListener("click", async function(){
     console.log(userResponse)  
     const textUser = document.createElement("p")
     textUser.textContent = userResponse
+    textUser.classList.add("user-text")
     chatContainer.appendChild(textUser)
-    const aiPrompt = "you are an AI for my AI language practice penpal site. Here is the users reply and i want you to reply"
+    const aiPrompt = "you are an AI for my AI language practice penpal site. Here is the users reply and i want you to reply. User's reply:"
     const aiResponse = await (await fetch(`https://text.pollinations.ai/${aiPrompt}${userResponse}`)).text()
     console.log("!")
     console.log(aiResponse)
     const textAI = document.createElement("p")
     textAI.textContent = aiResponse
+    textAI.classList.add("ai-text")
     chatContainer.appendChild(textAI)
 })
